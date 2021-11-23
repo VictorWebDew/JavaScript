@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classWork4</title>
+</head>
+<body>
+
+<script>
+    /* створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!) */
+
+function minNumber (a, b, c) {
+    if (a > b && a > c) {
+        if (b > c ) {
+            console.log(a, b, c);
+        } else {
+            console.log(a, c, b);
+        }
+    } else if (b > a && b > c) {
+        if (a > c) {
+            console.log(b, a, c);
+        }  else {
+            console.log(b, c, a);
+        }
+    } else {
+        if (a > b) {
+            console.log(c, a, b);
+        } else {
+            console.log('c, b, a');
+        }
+    }
+}
+    minNumber (20, 50, 60);
+/* створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!) */
+
+    function maxNumber (a, b, c) {
+        if (a < b && a < c) {
+            if (b < c ) {
+                console.log(c, b, a);
+            } else {
+                console.log(b, c, a);
+            }
+        } else if (b < a && b < c) {
+            if (a < c) {
+                console.log(c, a, b);
+            }  else {
+                console.log(c, b, a);
+            }
+        } else {
+            if (a < b) {
+                console.log(b, c, a);
+            } else {
+                console.log('a, b, c');
+            }
+        }
+    }
+    maxNumber (20, 50, 60);
+
+    /* створити функцію яка повертає найбільше число з масиву */
+
+    let array2 = [5, 7, 20, 15, 12];
+    function maxFromArray2 (array2) {
+        let max = array2[0];
+        for (const number of array2) {
+            if (number > max) {
+                max = number;
+            }
+        }
+        return max;
+    }
+
+
+    /* створити функцію яка повертає найменьше число з масиву */
+
+    let array3 = [5, 7, 20, 15, 12];
+    function minFromArray3 (array3) {
+        let min = array3[0];
+        for (const number of array3) {
+            if (number < min) {
+                min = number;
+            }
+        }
+        return min;
+    }
+
+
+    /* створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13 */
+
+    let numbers = [1, 2, 3, 10, 13];
+    function sumArr (numbers) {
+        let total = 0;
+        for (let number of numbers) {
+            total = total + number;
+        }
+        return total;
+    }
+
+    /* створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень. */
+
+    function avgArr (numbers) {
+        let result = sumArr(numbers);
+        return result / numbers.length;
+    }
+
+    /* створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено) */
+
+function maxMinArr (numbs) {
+    let max = numbs[0];
+    let min = numbs[0];
+    for (const num of numbs) {
+        if (num > max) {
+            max = num;
+        }
+
+        if (num < min) {
+            min = num;
+        }
+    }
+    return min;
+    console.log(max);
+}
+
+/* створити функцію яка заповнює масив рандомними числами
+(цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його*/
+
+    function random (arr) {
+        for (let i = 0; i < 10; i++) {
+            arr[i] = Math.round(Math.random() * 100);
+        }
+        return arr;
+    }
+
+    /* створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону. */
+
+    function random2 (arr, limit) {
+        for (let i = 0; i < 10; i++) {
+            arr[i] = Math.round(Math.random() * limit);
+        }
+        return arr;
+    }
+
+/* Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1]. */
+
+    function reverseArr (arr) {
+        let newArr = [];
+        for (let i = arr.length - 1; i >= 0; i --) {
+            let arrEach = arr[i];
+            let itemAdd = newArr.push(arrEach);
+        }
+        return itemAdd;
+    }
+
+
+</script>
+</body>
+</html>
